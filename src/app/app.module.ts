@@ -10,11 +10,13 @@ import { PokemonModule } from './pokemon/pokemon.module';
 import { InMemoryDataService } from './in-memory-data.service';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     {
         path: '',
+        canActivate: [AuthGuard],
         loadChildren: () =>
         import('./pokemon/pokemon.routes').then((module) => module.pokemonRoutes),
     },
