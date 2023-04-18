@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styles: [
-  ]
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styles: [],
+    standalone: true,
+    imports: [FormsModule, NgIf]
 })
 export class LoginComponent implements OnInit {
   message: string = 'Vous êtes déconnecté. (pikachu/pikachu)';

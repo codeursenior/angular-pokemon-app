@@ -2,10 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
+import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
+import { LoaderComponent } from '../loader/loader.component';
+import { NgIf, NgFor, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-detail-pokemon',
-  templateUrl: './detail-pokemon.component.html'
+    selector: 'app-detail-pokemon',
+    templateUrl: './detail-pokemon.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor, LoaderComponent, DatePipe, PokemonTypeColorPipe]
 })
 export class DetailPokemonComponent implements OnInit {
 
