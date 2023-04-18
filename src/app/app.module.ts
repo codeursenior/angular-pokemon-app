@@ -6,7 +6,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PokemonModule } from './pokemon/pokemon.module';
+
 import { InMemoryDataService } from './in-memory-data.service';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -26,15 +26,14 @@ const routes: Routes = [
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        BrowserModule,
-        FormsModule,
-        HttpClientModule,
-        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
-        PokemonModule,
-        RouterModule.forRoot(routes),
-        PageNotFoundComponent,
-        LoginComponent
-    ],
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    RouterModule.forRoot(routes),
+    PageNotFoundComponent,
+    LoginComponent
+],
     providers: [],
     bootstrap: [AppComponent]
 })
