@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { PokemonService } from "./pokemon.service";
 
-export const pokemonRoutes: Routes = [{
+export default [{
   path: '',
   providers: [PokemonService],
   children: [
@@ -21,4 +21,4 @@ export const pokemonRoutes: Routes = [{
       loadComponent: () => import('./detail-pokemon/detail-pokemon.component').then(module => module.DetailPokemonComponent) 
     }
   ]
-}];
+}] as Routes;
