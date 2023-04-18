@@ -13,6 +13,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
+    {
+        path: '',
+        loadChildren: () =>
+        import('./pokemon/pokemon.routes').then((module) => module.pokemonRoutes),
+    },
     { path: 'login', loadComponent: () => import('./login/login.component').then(module => module.LoginComponent) },
     { path: '**', loadComponent: () => import('./page-not-found/page-not-found.component').then(module => module.PageNotFoundComponent) }
   ];
