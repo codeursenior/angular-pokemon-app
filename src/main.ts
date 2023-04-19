@@ -19,8 +19,8 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import("./app/pokemon/pokemon.routes")
     },
-    { path: 'login', loadComponent: () => import("./app/login/login.component").then(module => module.LoginComponent) },
-    { path: '**', loadComponent: () => import("./app/page-not-found/page-not-found.component").then(module => module.PageNotFoundComponent) }
+    { path: 'login', title: 'Login', loadComponent: () => import("./app/login/login.component").then(module => module.LoginComponent) },
+    { path: '**', title: 'Page not found', loadComponent: () => import("./app/page-not-found/page-not-found.component").then(module => module.PageNotFoundComponent) }
 ];
 
 
