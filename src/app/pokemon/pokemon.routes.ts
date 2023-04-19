@@ -9,11 +9,13 @@ export default [{
       path: 'edit/pokemon/:id', 
       loadComponent: () => import('./edit-pokemon/edit-pokemon.component').then(module => module.EditPokemonComponent) },
     { 
-      path: 'pokemon/add', 
+      path: 'pokemon/add',
+      title: 'Add pokemon',
       loadComponent: () => import('./add-pokemon/add-pokemon.component').then(module => module.AddPokemonComponent) 
     },
     { 
-      path: 'pokemons', 
+      path: 'pokemons',
+      title: 'Pokedex',
       loadComponent: () => import('./list-pokemon/list-pokemon.component').then(module => module.ListPokemonComponent)
     },
     { 
